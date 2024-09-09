@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-declare global{
-  namespace globalThis{
-    let prismadb: PrismaClient
-  }
+declare global {
+  var prismadb: PrismaClient | undefined;
 }
+
+export {};
