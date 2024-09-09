@@ -5,6 +5,7 @@ import { useState } from "react";
 const Auth = () => {
   const [email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
 
 
   return (
@@ -32,7 +33,19 @@ const Auth = () => {
                 value={email}
                 onChange={(ev) => setEmail(ev.target.value)}
               />
+
+              <Input
+                label="Password"
+                id="password"
+                type="password"
+                value={password}
+                onChange={(ev) => setPassword(ev.target.value)}
+              />
             </div>
+
+            <button type="submit" className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition"> 
+            Login
+            </button>
           </div>
         </div>
       </div>
