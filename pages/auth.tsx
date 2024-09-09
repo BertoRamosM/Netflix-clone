@@ -1,5 +1,4 @@
 import Input from "@/components/Input";
-import { current } from "@reduxjs/toolkit";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 
@@ -62,12 +61,12 @@ const Auth = () => {
               {variant === "login" ? "Sign in" : "Register"}
             </button>
             <p className="text-neutral-500 mt-12">
-              First time using Netflix?
+             {variant === "login" ? "Don't have an account?" : "Already have an account?"}
               <span
                 className="text-white ml-1 hover:underline cursor-pointer"
                 onClick={toggleVariant}
               >
-                Create an account
+                {variant === "login" ? "Register" : "Login"}
               </span>
             </p>
           </div>
