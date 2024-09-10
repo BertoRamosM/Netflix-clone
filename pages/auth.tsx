@@ -5,6 +5,9 @@ import axios from "axios"
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+import {FcGoogle} from "react-icons/fc"
+import {FaGithub, faGithub} from "react-icons/fa"
+
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
@@ -90,14 +93,26 @@ const Auth = () => {
             </div>
 
             <button
-            onClick={variant === "login" ? login : register}
+              onClick={variant === "login" ? login : register}
               type="submit"
               className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition"
             >
               {variant === "login" ? "Sign in" : "Register"}
             </button>
+
+            <div className="flex flex-row items-center gap-4 mt-8 justify-center">
+              <div className=" w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                <FcGoogle />
+              </div>
+              <div className=" w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                <FaGithub  className="text-black" />
+              </div>
+            </div>
+
             <p className="text-neutral-500 mt-12">
-             {variant === "login" ? "Don't have an account?" : "Already have an account?"}
+              {variant === "login"
+                ? "Don't have an account?"
+                : "Already have an account?"}
               <span
                 className="text-white ml-1 hover:underline cursor-pointer"
                 onClick={toggleVariant}
